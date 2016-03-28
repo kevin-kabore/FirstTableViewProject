@@ -12,11 +12,79 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    NSDictionary *courseDetails;
+    NSArray *courseNames;
+    
+    NSDictionary *webCourseDetails;
+    NSArray *webCourseNames;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return @"iOS courses";
+    } else {
+        return @"Web Courses";
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+   
+    if (section ==0){
+    
+        return courseDetails.count;
+    
+    } else {
+      
+        return webCourseDetails.count;
+    }
+
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    //Create cell
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (indexPath.section == 0){
+  
+        cell.textLabel.text = courseNames[indexPath.row];
+    } else{
+    
+        cell.textLabel.text = webCourseNames[indexPath.row];
+    
+    }
+       return cell;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSURL *url = [[NSBundle mainBundle]URLForResource:@"courses" withExtension:@"plist"];
+    
+    //Load the plist into a dictionary
+    courseDetails = [NSDictionary dictionaryWithContentsOfURL:url];
+    
+    //fill an array with just the keys
+    courseNames = courseDetails.allKeys;
+    
+    NSURL *webUrl = [[NSBundle mainBundle]URLForResource:@"courses_web" withExtension:@"plist"];
+    
+    //Load the plist into the dictionary
+    webCourseDetails = [NSDictionary dictionaryWithContentsOfURL:webUrl];
+    
+    //fill the arry with just the keys
+    webCourseNames = webCourseDetails.allKeys;
+    
 }
 
 - (void)didReceiveMemoryWarning {

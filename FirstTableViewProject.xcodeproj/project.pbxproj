@@ -15,6 +15,8 @@
 		2A6EF03D1CA234A80033F61C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EF03B1CA234A80033F61C /* LaunchScreen.storyboard */; };
 		2A6EF0481CA234A80033F61C /* FirstTableViewProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6EF0471CA234A80033F61C /* FirstTableViewProjectTests.m */; };
 		2A6EF0531CA234A80033F61C /* FirstTableViewProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6EF0521CA234A80033F61C /* FirstTableViewProjectUITests.m */; };
+		2A6EF0611CA239610033F61C /* courses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EF0601CA239610033F61C /* courses.plist */; };
+		2A6EF0631CA481120033F61C /* courses_web.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A6EF0621CA481120033F61C /* courses_web.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2A6EF04E1CA234A80033F61C /* FirstTableViewProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstTableViewProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6EF0521CA234A80033F61C /* FirstTableViewProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewProjectUITests.m; sourceTree = "<group>"; };
 		2A6EF0541CA234A80033F61C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6EF0601CA239610033F61C /* courses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = courses.plist; sourceTree = "<group>"; };
+		2A6EF0621CA481120033F61C /* courses_web.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = courses_web.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		2A6EF02D1CA234A80033F61C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A6EF0621CA481120033F61C /* courses_web.plist */,
+				2A6EF0601CA239610033F61C /* courses.plist */,
 				2A6EF02E1CA234A80033F61C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -246,6 +252,8 @@
 				2A6EF03D1CA234A80033F61C /* LaunchScreen.storyboard in Resources */,
 				2A6EF03A1CA234A80033F61C /* Assets.xcassets in Resources */,
 				2A6EF0381CA234A80033F61C /* Main.storyboard in Resources */,
+				2A6EF0611CA239610033F61C /* courses.plist in Resources */,
+				2A6EF0631CA481120033F61C /* courses_web.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
