@@ -25,6 +25,7 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
     if (section == 0) {
         return @"iOS courses";
     } else {
@@ -47,21 +48,27 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
+//    UITableViewCell * cell =  [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] ;
 
     //Create cell
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
+    UIImage *myImage = [UIImage imageNamed:@"DemoCellImage"];
+    [cell.imageView setImage:myImage];
+    
     if (indexPath.section == 0){
-  
         cell.textLabel.text = courseNames[indexPath.row];
+        cell.detailTextLabel.text = courseDetails[courseNames[indexPath.row]];
     } else{
-    
         cell.textLabel.text = webCourseNames[indexPath.row];
-    
+        cell.detailTextLabel.text = webCourseDetails[webCourseNames[indexPath.row]];
     }
-       return cell;
+    
+    
+    //fill cell
+    return cell;
 }
 
 - (void)viewDidLoad {
@@ -79,10 +86,10 @@
     
     NSURL *webUrl = [[NSBundle mainBundle]URLForResource:@"courses_web" withExtension:@"plist"];
     
-    //Load the plist into the dictionary
+//    Load the plist into the dictionary
     webCourseDetails = [NSDictionary dictionaryWithContentsOfURL:webUrl];
     
-    //fill the arry with just the keys
+//    fill the arry with just the keys
     webCourseNames = webCourseDetails.allKeys;
     
 }
